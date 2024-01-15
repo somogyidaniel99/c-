@@ -1,0 +1,28 @@
+﻿@page "/students"
+@using StudentProject.ViewModels;
+@using StudentProject.Models;
+
+<h3>Diákok</h3>
+<div class="table-responsive">
+    <table class="table table-striped table-condensed table-hover">
+        <tr>
+            <th>Név</th>
+            <th>Osztály</th>
+            <th>Születési év</th>
+        </tr>
+        <tbody>
+            @foreach (Student student in studentViewModel.Students)
+            {
+                <tr>
+                    <td>@student.HungarianFullName</td>
+                    <td>@student.SchoolYearAndClass</td>
+                    <td>@student.HungarianLongBirthsDay</td>
+                </tr>    
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    private StudentViewModel studentViewModel=new StudentViewModel();
+}
